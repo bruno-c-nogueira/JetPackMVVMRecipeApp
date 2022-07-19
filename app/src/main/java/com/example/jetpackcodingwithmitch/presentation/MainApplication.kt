@@ -1,4 +1,4 @@
-package com.example.jetpackcodingwithmitch.di
+package com.example.jetpackcodingwithmitch.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

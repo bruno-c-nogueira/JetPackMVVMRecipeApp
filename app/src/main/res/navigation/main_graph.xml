@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/recipeListFragment"
-        android:name="com.example.jetpackcodingwithmitch.RecipeListFragment"
+        android:name="com.example.jetpackcodingwithmitch.presentation.ui.recipe_list.RecipeListFragment"
         android:label="fragment_receipe_list"
         >
         <action
@@ -17,6 +17,6 @@
     </fragment>
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.example.jetpackcodingwithmitch.RecipeFragment"
+        android:name="com.example.jetpackcodingwithmitch.presentation.ui.recipe.RecipeFragment"
         android:label="RecipeFragment" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.jetpackcodingwithmitch
+package com.example.jetpackcodingwithmitch.presentation.ui.recipe_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,16 +15,23 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.example.jetpackcodingwithmitch.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipeListFragment : Fragment() {
+
+    val viewModel: RecipeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
+        viewModel.getToken()
         return ComposeView(requireContext()).apply {
             setContent {
                 Column(Modifier.padding(16.dp)) {
