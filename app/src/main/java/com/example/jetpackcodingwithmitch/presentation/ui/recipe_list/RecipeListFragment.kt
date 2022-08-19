@@ -1,6 +1,7 @@
 package com.example.jetpackcodingwithmitch.presentation.ui.recipe_list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.jetpackcodingwithmitch.R
+import com.example.jetpackcodingwithmitch.util.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,11 +31,15 @@ class RecipeListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        viewModel.getToken()
+    ): View {
+
+
         return ComposeView(requireContext()).apply {
             setContent {
+                val recipes = viewModel.recipes.value
+                for (recipe in recipes){
+                    Log.d(TAG, "${recipe.title}")
+                }
                 Column(Modifier.padding(16.dp)) {
                     Text(text = "Recipe List", style = TextStyle(fontSize = 21.sp))
                     Spacer(modifier = Modifier.padding(10.dp))

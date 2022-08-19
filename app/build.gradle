@@ -50,6 +50,7 @@ android {
 dependencies {
 
     def lifecycle_version = "2.5.0-rc01"
+    def mock_version = "1.1.0"
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // ViewModel utilities for Compose
@@ -89,4 +90,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    //Mock requests
+    implementation "co.infinum:retromock:1.1.0"
+
 }
