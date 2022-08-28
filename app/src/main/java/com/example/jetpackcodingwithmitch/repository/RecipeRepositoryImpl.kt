@@ -10,7 +10,7 @@ class RecipeRepositoryImpl @Inject constructor(
     private val mapper: RecipeNetworkMapper
 ): RecipeRepository {
     override suspend fun search(token: String, page: Int, query: String): List<Recipe>? {
-        return mapper.toDomainList(recipeService.search(token, page, query)?.recipes)
+        return mapper.toDomainList(recipeService.search(token, page, query)?.results)
     }
 
     override suspend fun get(token: String, id: Int): Recipe? {
