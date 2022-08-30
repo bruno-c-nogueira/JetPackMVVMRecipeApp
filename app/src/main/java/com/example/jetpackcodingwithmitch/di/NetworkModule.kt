@@ -30,7 +30,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRecipeService(retroMock: Retromock): RecipeService{
+    fun provideRecipeService(retroMock: Retromock): RecipeService {
         return retroMock.create(RecipeService::class.java)
     }
 
@@ -53,7 +53,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetroMock(retrofit: Retrofit, @ApplicationContext context: Context): Retromock = Retromock.Builder().defaultBodyFactory(
-        ResourceBodyFactory(context)
-    ).retrofit(retrofit).build()
+    fun provideRetroMock(retrofit: Retrofit, @ApplicationContext context: Context): Retromock =
+        Retromock.Builder()
+            .defaultBodyFactory(ResourceBodyFactory(context)).retrofit(retrofit).build()
 }
